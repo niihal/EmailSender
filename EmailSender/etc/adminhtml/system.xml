@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+        <section id="customemailrestrict" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+        <label>Restrict Email For non COD</label>
+        <tab>sales</tab>
+            <resource>Custom_EmailSender::config_emailsender_helper</resource>
+            <group id="general" sortOrder="40" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                <label>Restrict Email For non COD</label>
+                <field id="enable_email_restrict_flag" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Restrict Email For non COD</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="payment_method" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send Email On Success Page for Payment Methods</label>
+                    <source_model>Custom\EmailSender\Model\Config\Source\PaymentMethods</source_model>
+                    <validate>validate-select</validate>
+                    <depends>
+                        <field id="enable_email_restrict_flag">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section> 
+	</system>
+</config>

@@ -1,0 +1,17 @@
+{
+    "name": "custom/emailsender",
+    "description": "Magento 2 Module to restrict order emails for specific payment methods and send emails on checkout success page.",
+    "type": "magento2-module",
+    "autoload": {
+    "files": [ "registration.php" ],
+        "psr-4": {
+            "Custom\\EmailSender\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Nihal Malik",
+            "email": "neehalmalik9@email.com"
+        }
+    ]
+}
